@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>
+            稻光
+        </title>
+    </head>
+    <body>
+        <h1>
+            稻 光 inabikari
+        </h1>
+        <hr>
+        {% for post in posts %}
+            <p style='font-family: 等线，微软雅黑;font-size: 16pt;font-weight: bold;'>
+                <a href="/post/{{post.slug}}">{{post.title}}</a>
+            </p>            
+            <!--
+                <p style='font-family: 等线，微软雅黑;font-size: 12pt;font-weight: normal;letter-spacing: normal;'>
+                    {{post.body}}
+                </p>
+            -->
+            
+        {% endfor %} 
+        <hr>
+        <h3>
+            今{{now}}
+        </h3>
+    </body>
+</html>
