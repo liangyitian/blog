@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',homepage),
     path('post/<slug:slug>/',showPost),
-    path('out_of_service/',out_of_service)
+    path('outofservice/',out_of_service)
 ]
