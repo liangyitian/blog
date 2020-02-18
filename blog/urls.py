@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from mainsite.views import homepage,showPost
+from mainsite.views import homepage,showPost,out_of_service
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',homepage),
-    path('post/<slug:slug>/',showPost)
+    path('post/<slug:slug>/',showPost),
+    path('out_of_service/',out_of_service)
 ]

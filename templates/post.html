@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset='utf-8'>
-        <title>
-            稻光
-        </title>
-    </head>
-    <body>
-        <h1>
-            {{post.title}}
-        </h1>
-        <hr>
-        <p style="font-family: 等线，微软雅黑;font-size: 12pt;font-weight: normal;letter-spacing: normal;">
-            {{post.body}}
-        </p>
-    </body>
-</html>
+{% extends 'base.html' %}
+{% block title %}{{post.title}}{% endblock %}
+{% block content %}
+    
+        <class class="row">
+            <class class="col-md-10" style="padding-left:200px;"> 
+                <h1>
+
+                    {{post.title}}
+                </h1>
+                <p style="color:grey">浏览{{post.view_num}}   喜欢{{post.like_num}}</p>
+                <hr>
+                <p style="font-family: 等线，微软雅黑;font-size: 12pt;font-weight: normal;letter-spacing: normal;">
+                    {{post.body|linebreaksbr}}
+                </p>
+            </class>
+            
+        </class>
+        
+    
+{% endblock %}

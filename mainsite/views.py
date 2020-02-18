@@ -17,3 +17,6 @@ def showPost(request,slug):
             return render(request,'post.html',locals())
     except:
         return redirect('/')
+
+def out_of_service(request):
+    return render(request,'out_of_service.html',locals())

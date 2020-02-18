@@ -1,30 +1,60 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset='utf-8'>
-        <title>
-            稻光
-        </title>
-    </head>
-    <body>
-        <h1>
-            稻 光 inabikari
-        </h1>
-        <hr>
-        {% for post in posts %}
-            <p style='font-family: 等线，微软雅黑;font-size: 16pt;font-weight: bold;'>
-                <a href="/post/{{post.slug}}">{{post.title}}</a>
-            </p>            
-            <!--
-                <p style='font-family: 等线，微软雅黑;font-size: 12pt;font-weight: normal;letter-spacing: normal;'>
-                    {{post.body}}
-                </p>
-            -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}稻光 inabikari{% endblock %}
+
+{% block content %}
+    
+    
+    <div class="jumbotron bg" style="background:url({% static 'images/junboBg.jpg' %}) repeat">
+        <div class='container'>
+            <h1>祝刘祎航同学十八岁生日快乐。</h1>
+            <p>你们认识她吗？<br>不认识的话，我给你介绍一下好了。</p>
+            <p><a class='btn btn-primary btn-lg' roll='button' href="/post/0219">来了老弟</a></p>
+
+        </div>
+        
+        
+    </div>
+    <div class="container">
+
+    
+        <div class='row'>
             
-        {% endfor %} 
-        <hr>
-        <h3>
-            今{{now}}
-        </h3>
-    </body>
-</html>
+                <div class="col-md-6" style="background-color: aliceblue;" >
+                 
+                    <h1 style='font-family:等线;font-size: 16pt;'>文章列表</h1><br>
+                    
+                    {% for post in posts %}
+                        <p style="font-family:等线;font-size: 14pt;font-weight: bold;">
+                            <a href="/post/{{post.slug}}">{{post.title}}</a>
+                
+                        </p>
+                
+                        <p style="font-family:等线;font-size: 12pt;">{{post.body|truncatechars:50}}...</p>
+                        <a href="/post/{{post.slug}}">查看全文</a>
+                        <br><br>
+                    {% endfor %}
+                    
+            
+                    
+                </div>
+
+                <div class="col-md-5 col-md-offset-1" style="background-color: aliceblue;">
+                    <h1 style='font-family:等线;font-size: 16pt;'>留言板</h1>
+                    
+                        <p style="font-family:等线;font-size: 12pt;">还没有人留言哦。</p>
+                        <nobr><a href="#">留言</a></nobr>
+                    
+                    
+                </div>
+            
+            
+            
+
+        </div>
+    </div>
+
+    
+
+
+{% endblock %}
